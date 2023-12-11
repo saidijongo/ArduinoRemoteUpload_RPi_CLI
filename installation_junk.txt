@@ -1,1 +1,53 @@
 
+jongo@raspberrypi:~ $ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+Installing in /home/jongo/bin
+ARCH=ARM64
+OS=Linux
+Using curl as download tool
+Downloading https://downloads.arduino.cc/arduino-cli/arduino-cli_0.34.2_Linux_ARM64.tar.gz
+arduino-cli not found. You might want to add "/home/jongo/bin" to your $PATH
+arduino-cli  Version: 0.34.2 Commit: 963c1a76 Date: 2023-09-11T10:05:49Z installed successfully in /home/jongo/bin
+jongo@raspberrypi:~ $ mv bin/ Arduino/
+jongo@raspberrypi:~ $ cd Arduino/
+jongo@raspberrypi:~/Arduino $ chmod a+x arduino-cli
+jongo@raspberrypi:~/Arduino $ sudo ./arduino-cli core update-index
+Downloading index: library_index.tar.bz2 downloaded
+Downloading index: package_index.tar.bz2 downloaded
+Downloading missing tool builtin:ctags@5.8-arduino11...
+builtin:ctags@5.8-arduino11 downloaded
+Installing builtin:ctags@5.8-arduino11...
+Skipping tool configuration....
+builtin:ctags@5.8-arduino11 installed
+Downloading missing tool builtin:serial-discovery@1.4.0...
+builtin:serial-discovery@1.4.0 downloaded
+Installing builtin:serial-discovery@1.4.0...
+Skipping tool configuration....
+builtin:serial-discovery@1.4.0 installed
+Downloading missing tool builtin:mdns-discovery@1.0.9...
+builtin:mdns-discovery@1.0.9 downloaded
+Installing builtin:mdns-discovery@1.0.9...
+Skipping tool configuration....
+builtin:mdns-discovery@1.0.9 installed
+Downloading missing tool builtin:serial-monitor@0.13.0...
+builtin:serial-monitor@0.13.0 downloaded
+Installing builtin:serial-monitor@0.13.0...
+Skipping tool configuration....
+builtin:serial-monitor@0.13.0 installed
+Downloading missing tool builtin:dfu-discovery@0.1.2...
+builtin:dfu-discovery@0.1.2 downloaded
+Installing builtin:dfu-discovery@0.1.2...
+Skipping tool configuration....
+builtin:dfu-discovery@0.1.2 installed
+Downloading index: package_index.tar.bz2 downloaded
+jongo@raspberrypi:~/Arduino $ arduino-cli version
+-bash: arduino-cli: command not found
+jongo@raspberrypi:~/Arduino $ ls -l
+total 26896
+-rwxr-xr-x 1 jongo jongo 27540343 Dec 11 10:46 arduino-cli
+jongo@raspberrypi:~/Arduino $ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+jongo@raspberrypi:~/Arduino $ echo 'export PATH=$PATH:/home/jongo/Arduino' >> ~/.bashrc
+source ~/.bashrc
+jongo@raspberrypi:~/Arduino $ arduino-cli version
+arduino-cli  Version: 0.34.2 Commit: 963c1a76 Date: 2023-09-11T10:05:49Z
+jongo@raspberrypi:~/Arduino $
