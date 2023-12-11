@@ -1,0 +1,34 @@
+###Arduino-cli installation
+1.
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+
+2.
+mv bin/ Arduino/
+cd Arduino/
+chmod a+x arduino-cli
+
+3.
+sudo ./arduino-cli core update-index
+
+4.
+sudo ./arduino-cli core install arduino:avr
+
+5.
+sudo ./arduino-cli core search
+
+6.
+sudo ./arduino-cli core search
+
+7.
+sudo ./arduino-cli board list
+
+#####################################################3
+#####Adding arduino-cli executable is in the correct directory (/home/jongo/Arduino) #######
+ls -l
+echo $PATH
+export PATH=$PATH:/home/jongo/Arduino
+
+echo 'export PATH=$PATH:/home/jongo/Arduino' >> ~/.bashrc
+source ~/.bashrc
+
+
