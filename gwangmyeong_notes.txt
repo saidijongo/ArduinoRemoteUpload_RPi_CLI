@@ -1,0 +1,62 @@
+
+
+- 다운로드 및 설치
+$ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+
+- 폴더 이동
+sudo mv arduino-cli /usr/local/bin 
+arduino-cli version
+
+- 종류 확인
+arduino-cli core search
+
+- 모듈 정보 업데이트
+arduino-cli core update-index
+arduino-cli core update 
+
+- 2040 모듈 설치
+arduino-cli core install arduino:mbed_nano
+arduino-cli core install arduino:mbed_rp2040
+
+-- 지원 목록
+arduino-cli core list
+
+-- 연결된거 목록
+arduino-cli board list
+
+-- 테스트 소스
+$ mkdir test
+$ cd test
+$ nano test.ino
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+  delay(100);                      // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+  delay(100);                      // wait for a second
+}
+
+-- 컴파일
+$ arduino-cli board list
+/dev/ttyACM0 serial   Serial Port (USB) Arduino Nano RP2040 Connect arduino:mbed_nano:nanorp2040connect arduino:mbed_nano
+
+$ arduino-cli compile --fqbn arduino:mbed_nano:nanorp2040connect /home/jongo/Desktop/pigfrog/test/test.ino
+
+-- Source Upload
+$ arduino-cli upload -p /dev/ttyACM0 -b arduino:mbed_nano:nanorp2040connect /home/jongo/Desktop/pigfrog/test/test.ino
+
+-- bin Upload
+pc에서 컴파일한 build 폴더 복사후 build중 xxx.bin 폴더에 가서 upload
+$ arduino-cli upload -p /dev/ttyACM0 -b arduino:mbed_nano:nanorp2040connect -i Blink_pigfrog.ino.bin
+
+
+
+
+
+
+
