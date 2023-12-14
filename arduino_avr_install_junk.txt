@@ -80,7 +80,7 @@ jongo@raspberrypi:~/Arduino $ sudo -E ~/Arduino/arduino-cli core install arduino
 Platform arduino:avr@1.8.6 already installed
 jongo@raspberrypi:~/Arduino $
 
-sudo ~/Arduino/arduino-cli core install arduino:mbed_nano
+#sudo ~/Arduino/arduino-cli core install arduino:mbed_nano
 
 
 
