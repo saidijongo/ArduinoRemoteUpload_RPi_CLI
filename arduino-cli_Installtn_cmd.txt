@@ -31,4 +31,7 @@ export PATH=$PATH:/home/jongo/Arduino
 echo 'export PATH=$PATH:/home/jongo/Arduino' >> ~/.bashrc
 source ~/.bashrc
 
-
+sudo apt-get install avrdude
+sudo usermod -aG dialout $(whoami)
+avrdude -p atmega328p -c arduino -P /dev/ttyUSB0 -b 115200 -v
+sudo apt-get install avrdude
