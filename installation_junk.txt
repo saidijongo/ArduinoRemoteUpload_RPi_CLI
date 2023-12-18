@@ -51,3 +51,78 @@ source ~/.bashrc
 jongo@raspberrypi:~/Arduino $ arduino-cli version
 arduino-cli  Version: 0.34.2 Commit: 963c1a76 Date: 2023-09-11T10:05:49Z
 jongo@raspberrypi:~/Arduino $
+
+
+
+
+
+####################################################
+jongo@dmbot:~ $ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+Installing in /home/jongo/bin
+ARCH=ARM64
+OS=Linux
+Using curl as download tool
+Downloading https://downloads.arduino.cc/arduino-cli/arduino-cli_0.34.2_Linux_ARM64.tar.gz
+arduino-cli not found. You might want to add "/home/jongo/bin" to your $PATH
+arduino-cli  Version: 0.34.2 Commit: 963c1a76 Date: 2023-09-11T10:05:49Z installed successfully in /home/jongo/bin
+jongo@dmbot:~ $ sudo mv arduino-cli /usr/local/bin
+mv: cannot stat 'arduino-cli': No such file or directory
+jongo@dmbot:~ $ ls /home/jongo/bin
+arduino-cli
+jongo@dmbot:~ $ sudo mv /home/jongo/bin/arduino-cli /usr/local/bin
+jongo@dmbot:~ $ arduino-cli version
+arduino-cli  Version: 0.34.2 Commit: 963c1a76 Date: 2023-09-11T10:05:49Z
+jongo@dmbot:~ $ 
+
+ 
+arduino-cli core update
+arduino-cli core install arduino:mbed_rp2040
+
+sudo arduino-cli core update
+sudo arduino-cli core install arduino:mbed_rp2040
+
+arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:mbed_rp2040 --input ~/ArduinoSketches/new_blink.ino
+
+vendor:architecture:board:parameters
+
+arduino-cli upload -p
+
+arduino-cli cache clean
+arduino-cli core update-index
+
+sudo usermod -aG dialout $USER
+
+
+#memory/ storage
+df -h
+sudo rm -rf /tmp/*
+sudo apt-get autoremove
+sudo du -h / | sort -rh | head -n 10
+sudo raspi-config
+sudo du -h --max-depth=1 / | sort -rh
+sudo apt-get clean
+sudo apt-get autoremove
+
+
+arduino-cli core search
+
+arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:mbed_rp2040 /home/jongo/Desktop/dmbot/test_blink.ino
+
+arduino-cli compile --upload C:\Users\Admin\Documents\Arduino\sketch_aug27a\sketch_aug27a.ino --port -p /dev/ttyACM0 --fqbn arduino:mbed_rp2040
+
+arduino-cli core install arduino:mbed_nano
+arduino-cli compile -b  arduino:mbed_nano:nanorp2040connect -v
+
+arduino-cli compile --upload -p /dev/ttyACM0 -b arduino:mbed_nano:nanorp2040connect
+
+ls -la
+cat Jongo.ino
+
+arduino-cli board listall avr
+arduino-cli board listall
+
+arduino-cli compile --fqbn arduino:avr:mega
+arduino-cli upload --fqbn arduino:avr:mega --port /dev/ttyUSB0
+
+arduino-cli core install arduino:avr
+arduino-cli core install
